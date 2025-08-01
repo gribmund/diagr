@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Календар завдань</title>
+  <script src="https://cdn.jsdelivr.net/npm/frappe-gantt@0.6.0/dist/frappe-gantt.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/frappe-gantt@0.6.0/dist/frappe-gantt.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 1rem;
+      margin: 0;
+      background-color: #f2f2f2;
+    }
+    #gantt {
+      width: 100%;
+      height: 700px;
+      overflow-x: auto;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .bar.blue   { fill: #4285f4; }
+    .bar.orange { fill: #fbbc04; }
+    .bar.green  { fill: #34a853; }
+    .bar-progress { fill-opacity: 0.3; }
+  </style>
+</head>
+<body>
+
+  <h2>Календар завдань (серпень–вересень 2025)</h2>
+  <div id="gantt"></div>
+
+  <script>
+    const tasks = [
+      {id: "1", name: "Розпорядження про початок конкурсу", start: "2025-08-05", end: "2025-08-05", progress: 0, custom_class: "blue"},
+      {id: "2", name: "Оголошення про конкурс", start: "2025-08-06", end: "2025-08-06", progress: 0, custom_class: "blue"},
+      {id: "3", name: "Прийом документів від кандидатів", start: "2025-08-06", end: "2025-08-15", progress: 0, custom_class: "blue"},
+      {id: "4", name: "Перевірка документів від кандидатів", start: "2025-08-16", end: "2025-08-25", progress: 0, custom_class: "blue"},
+      {id: "5", name: "Оприлюднення списку кандидатів", start: "2025-08-26", end: "2025-09-04", progress: 0, custom_class: "blue"},
+      {id: "6", name: "1-й тур голосування", start: "2025-09-05", end: "2025-09-07", progress: 0, custom_class: "blue"},
+      {id: "7", name: "Результати 1-го туру", start: "2025-09-08", end: "2025-09-08", progress: 0, custom_class: "blue"},
+      {id: "8", name: "2-й тур голосування", start: "2025-09-14", end: "2025-09-16", progress: 0, custom_class: "blue"},
+      {id: "9", name: "Результати 2-го туру", start: "2025-09-17", end: "2025-09-17", progress: 0, custom_class: "blue"},
+
+      {id: "10", name: "Розпорядження про вибори", start: "2025-08-27", end: "2025-08-27", progress: 0, custom_class: "orange"},
+      {id: "11", name: "Оголошення про конкурс", start: "2025-08-28", end: "2025-08-28", progress: 0, custom_class: "orange"},
+      {id: "12", name: "Прийом документів від кандидатів", start: "2025-08-28", end: "2025-09-06", progress: 0, custom_class: "orange"},
+      {id: "13", name: "Перевірка документів від кандидатів", start: "2025-09-07", end: "2025-09-16", progress: 0, custom_class: "orange"},
+      {id: "14", name: "Оприлюднення списку кандидатів", start: "2025-09-17", end: "2025-09-17", progress: 0, custom_class: "orange"},
+
+      {id: "15", name: "Проведення Загальних зборів АГРУ", start: "2025-09-27", end: "2025-09-27", progress: 0, custom_class: "green"},
+    ];
+
+    const gantt = new Gantt("#gantt", tasks, {
+      view_mode: 'Day',
+      date_format: 'YYYY-MM-DD',
+      custom_popup_html: null,
+      start: new Date("2025-08-01"),
+      end: new Date("2025-09-30")
+    });
+  </script>
+
+</body>
+</html>
